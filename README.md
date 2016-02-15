@@ -24,6 +24,7 @@ Please see the examples in the 'source' folder.
 - add the cinema 4d api project to the VS solution
 - Set c4d api as target dependency for the effex sdk project in VS
 
+Alternatively you can add the source files and the api files to an existing C4D SDK project.
 
 *The folders in this repository contain the following files:*
 - api: the Effex API files
