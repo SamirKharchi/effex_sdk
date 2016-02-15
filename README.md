@@ -28,7 +28,7 @@ Alternatively you can add the source files and the api files to an existing C4D 
 
 *The folders in this repository contain the following files:*
 - api: the Effex API files
-- res: resource description files
+- res: actual plugin resource description files
 - settings: just for user convenience the C4D API property presets required
 - source: project example source code for each possible plugin node type
 
