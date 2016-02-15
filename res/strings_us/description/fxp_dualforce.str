@@ -1,0 +1,6 @@
+STRINGTABLE fxp_dualforce
+{
+	fxp_dualforce "DF::ToCamera";
+
+	DF_NOISEGRADIENT_INTENSITY "Intensity";
+}

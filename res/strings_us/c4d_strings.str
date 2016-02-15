@@ -1,0 +1,9 @@
+// C4D-StringResource
+// Identifier	Text
+
+STRINGTABLE
+{
+  IDS_PARTICLECONSTRAINT "PCS::Sine Average"; 
+  IDS_PARTICLEOPERATOR "POP::Velocity-Based Color & Drag"; 
+  IDS_DUALFORCE	"DF::ToCamera";
+}

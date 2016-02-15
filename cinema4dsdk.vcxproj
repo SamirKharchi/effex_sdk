@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Intel|x64">
+      <Configuration>Intel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{21895B69-DE91-7035-0009-38CB8C5CDEA3}</ProjectGuid>
+    <RootNamespace>maxon</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectName>effexsdk</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Intel|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="./projectsettings.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(MAXON_ROOTDIR)\frameworks\settings\DebugWin64.props" />
+    <Import Project="$(MAXON_ROOTDIR)\frameworks\cinema.framework\project\cinema.framework.includes.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="./projectsettings.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(MAXON_ROOTDIR)\frameworks\settings\ReleaseWin64.props" />
+    <Import Project="$(MAXON_ROOTDIR)\frameworks\cinema.framework\project\cinema.framework.includes.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Intel|x64'" Label="PropertySheets">
+    <Import Project="./projectsettings.props" />
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(MAXON_ROOTDIR)\frameworks\settings\IntelWin64.props" />
+    <Import Project="$(MAXON_ROOTDIR)\frameworks\cinema.framework\project\cinema.framework.includes.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.cdl64</TargetExt>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.cdl64</TargetExt>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Intel|x64'">$(ProjectName)</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Intel|x64'">.cdl64</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>./api;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>./api;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>./source;./res;./res/description;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries />
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>./source;./res;./res/description;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <WarningLevel>Level3</WarningLevel>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries />
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Intel|x64'">
+    <Midl>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <AdditionalIncludeDirectories>./source;./res;./res/description;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <IgnoreSpecificDefaultLibraries />
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="api\api_effex.cpp" />
+    <ClCompile Include="api\api_effex_base.cpp" />
+    <ClCompile Include="api\api_effex_channel.cpp" />
+    <ClCompile Include="api\api_effex_constraint.cpp" />
+    <ClCompile Include="api\api_effex_node.cpp" />
+    <ClCompile Include="api\api_effex_node_constraint.cpp" />
+    <ClCompile Include="api\api_effex_node_force.cpp" />
+    <ClCompile Include="api\api_effex_node_operator.cpp" />
+    <ClCompile Include="api\api_effex_particle.cpp" />
+    <ClCompile Include="api\api_effex_particlegroup.cpp" />
+    <ClCompile Include="api\api_effex_scene.cpp" />
+    <ClCompile Include="api\api_effex_volume.cpp" />
+    <ClCompile Include="source\constraints\particle_constraint.cpp" />
+    <ClCompile Include="source\forces\dual_force.cpp" />
+    <ClCompile Include="source\main.cpp" />
+    <ClCompile Include="source\operators\particle_operator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="api\api_effex.h" />
+    <ClInclude Include="api\api_effex_base.h" />
+    <ClInclude Include="api\api_effex_channel.h" />
+    <ClInclude Include="api\api_effex_constraint.h" />
+    <ClInclude Include="api\api_effex_lib.h" />
+    <ClInclude Include="api\api_effex_node.h" />
+    <ClInclude Include="api\api_effex_nodeids.h" />
+    <ClInclude Include="api\api_effex_node_constraint.h" />
+    <ClInclude Include="api\api_effex_node_force.h" />
+    <ClInclude Include="api\api_effex_node_operator.h" />
+    <ClInclude Include="api\api_effex_particle.h" />
+    <ClInclude Include="api\api_effex_particlegroup.h" />
+    <ClInclude Include="api\api_effex_scene.h" />
+    <ClInclude Include="api\api_effex_to_c4d.h" />
+    <ClInclude Include="api\api_effex_volume.h" />
+    <ClInclude Include="api\fx_base.h" />
+    <ClInclude Include="api\fx_base_constraints.h" />
+    <ClInclude Include="api\fx_constraint.h" />
+    <ClInclude Include="api\fx_force_base.h" />
+    <ClInclude Include="api\fx_force_plugin.h" />
+    <ClInclude Include="api\fx_operator_plugin.h" />
+    <ClInclude Include="api\fx_property.h" />
+    <ClInclude Include="api\global_nodes.h" />
+    <ClInclude Include="api\global_particles.h" />
+    <ClInclude Include="api\global_simulationtime.h" />
+    <ClInclude Include="api\kdNeighbor.h" />
+    <ClInclude Include="api\navie_memory_c4d.h" />
+    <ClInclude Include="api\vector\vecint3d.h" />
+    <ClInclude Include="api\vector\vector3d.h" />
+    <ClInclude Include="source\constraints\particle_constraint.h" />
+    <ClInclude Include="source\forces\dual_force.h" />
+    <ClInclude Include="source\operators\particle_operator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\R16\frameworks\cinema.framework\project\cinema.framework.vcxproj">
+      <Project>{69bf9b7d-7eb2-7fc5-0009-38cb8c5cdea3}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="api\note.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+</Project>

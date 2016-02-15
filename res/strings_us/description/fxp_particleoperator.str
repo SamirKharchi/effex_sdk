@@ -1,0 +1,10 @@
+STRINGTABLE fxp_particleoperator
+{
+	fxp_particleoperator "POP::Velocity To Color";
+
+	POP_DRAG "Drag";
+	POP_MAX "Range Maximum";
+	POP_COLOR "Color";
+	POP_PARTICLEGROUP "Particle Group";
+	POP_PARTICLEGROUP_SELECTOR "C";
+}

@@ -1,0 +1,6 @@
+STRINGTABLE fxp_particleconstraint
+{
+	fxp_particleconstraint "PCS::Average Sine";
+
+	PARTICLECONSTRAINT_OFFSET "Offset";
+}

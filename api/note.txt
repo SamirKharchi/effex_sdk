@@ -1,0 +1,11 @@
+The resource files:
+
+fx_base.h
+fx_base_constraints.h
+fx_constraint.h
+fx_force_base.h
+fx_force_plugin.h
+fx_operator_plugin.h
+
+These are the same as the ones in the Effex plugin´s description resource folder (..plugins/Navie Effex/res/description)
+so you could also simply add that folder path to the project settings include path (instead of adding them to the project).
