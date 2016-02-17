@@ -1,7 +1,7 @@
 # EFFEX SDK
 *Latest API of Effex (for Cinema 4D) *
 
-This is the latest API/SDK for **Effex** *for Cinema 4D* (www.dpit2.de)
+This is the latest API/SDK for **Effex** *for Cinema 4D* (www.fluidsimulation.de)
 
 It provides third parties with an SDK to access (read & modify) all simulation/framework data in Effex 2.7+.
 Furthermore it allows to extent Effex functionality with your own plugin nodes and provides tools for multiprocessor execution of such nodes.
@@ -39,3 +39,18 @@ The documentation of all API functions/classes/members can be found in the Effex
 Also I have opened up a plugin development subforum in the Navié community forums. 
 Feel free to ask any questions in there if the docs don't help.
 
+
+**License**
+   Copyright 2016 Samir Kharchi, Navié
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
