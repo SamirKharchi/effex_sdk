@@ -40,13 +40,13 @@ The documentation of all API functions/classes/members can be found in the Effex
 Also I have opened up a plugin development subforum in the Navié community forums (see http://www.dpit2.de/community/viewforum.php?f=61). 
 Feel free to ask any questions in there if the docs don't help.
 
-
+************************************************************************************************
 **License**
 
    Copyright 2016 Samir Kharchi, Navié
 
    Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
+   you may not use these files except in compliance with the License.
    You may obtain a copy of the License at
 
        http://www.apache.org/licenses/LICENSE-2.0
