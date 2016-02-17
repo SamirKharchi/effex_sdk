@@ -35,7 +35,7 @@ Alternatively you can add the source files and the api files to an existing C4D 
 
 **Documentation**
 
-The documentation of all API functions/classes/members can be found in the Effex documentation inside of Cinema 4D itself or in the online documentation (see help.fluidsimulation.de/EN/).
+The documentation of all API functions/classes/members can be found in the Effex documentation inside of Cinema 4D itself or in the online documentation (see http://help.fluidsimulation.de/EN/).
 Also I have opened up a plugin development subforum in the Navié community forums. 
 Feel free to ask any questions in there if the docs don't help.
 
