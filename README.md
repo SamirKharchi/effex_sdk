@@ -41,6 +41,7 @@ Feel free to ask any questions in there if the docs don't help.
 
 
 **License**
+
    Copyright 2016 Samir Kharchi, Navié
 
    Licensed under the Apache License, Version 2.0 (the "License");
