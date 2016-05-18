@@ -3,6 +3,8 @@
 Bool RegisterParticleConstraint(void);
 Bool RegisterParticleOperator(void);
 Bool RegisterDualForce(void);
+Bool RegisterVoxelGenerator(void);
+Bool RegisterSampleEffector(void);
 
 Bool PluginStart(void)
 {
@@ -11,6 +13,8 @@ Bool PluginStart(void)
 		RegisterParticleConstraint();
 		RegisterDualForce();
 		RegisterParticleOperator();
+		RegisterVoxelGenerator();
+		RegisterSampleEffector();
 	}	
 	return true;
 }
