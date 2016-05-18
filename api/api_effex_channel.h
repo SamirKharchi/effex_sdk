@@ -1,4 +1,4 @@
-// Copyright (c) All Rights Reserved, Navié
+// Copyright (c) All Rights Reserved, NaviÃ©
 //
 // This does not touch the license for the Cinema 4D specific code functions used
 // Please see the Cinema 4D license correspondingly. All other rights reserved.
@@ -87,6 +87,8 @@ namespace NAVIE_GLOBAL
 			class FXScalarCellIterator
 			{
 			public:
+				VecInt3D GetCoordinate(const int cpu) ;
+				Int32_C4D GetLinearCoordinate(const int cpu) ;
 				double	GetValue(const int cpu) ;
 				double	GetNeighborValue(const int cpu, short x, short y, short z);
 				void	SetValue(const int cpu, const double& value) ;
@@ -94,13 +96,13 @@ namespace NAVIE_GLOBAL
 				bool Init				(FXScalarChannel* channel);
 				bool Init				(FXScalarChannel* channel, int cpus, bool include_borders = false);
 
-				inline void Start		(const int cpu, bool reverse = false) ;
-				inline bool SetNext		(const int cpu) ;
-				inline bool SetPrev		(const int cpu) ;
+				void Start		(const int cpu, bool reverse = false) ;
+				bool SetNext		(const int cpu) ;
+				bool SetPrev		(const int cpu) ;
 
-				inline void Offset		(Int32_C4D offset);
-				inline bool IsValid		(void) const;
-				inline bool OffsetSafe	(Int32_C4D offset);
+				void Offset		(Int32_C4D offset);
+				bool IsValid		(void) const;
+				bool OffsetSafe		(Int32_C4D offset);
 
 				static FXScalarCellIterator* Alloc();
 				static void Free(FXScalarCellIterator*& p);
@@ -109,6 +111,8 @@ namespace NAVIE_GLOBAL
 			class FXVectorCellIterator
 			{
 			public:
+				VecInt3D GetCoordinate(const int cpu) ;
+				Int32_C4D GetLinearCoordinate(const int cpu) ;
 				vector3d GetValue(const int cpu) ;
 				vector3d GetNeighborValue(const int cpu, short x, short y, short z);
 				void	SetValue(const int cpu, const vector3d& value) ;
@@ -116,13 +120,13 @@ namespace NAVIE_GLOBAL
 				bool Init				(FXVectorChannel* channel);
 				bool Init				(FXVectorChannel* channel, int cpus, bool include_borders = false);
 
-				inline void Start		(const int cpu, bool reverse = false) ;
-				inline bool SetNext		(const int cpu) ;
-				inline bool SetPrev		(const int cpu) ;
+				void Start		(const int cpu, bool reverse = false) ;
+				bool SetNext		(const int cpu) ;
+				bool SetPrev		(const int cpu) ;
 
-				inline void Offset		(Int32_C4D offset);
-				inline bool IsValid		(void) const;
-				inline bool OffsetSafe	(Int32_C4D offset);
+				void Offset		(Int32_C4D offset);
+				bool IsValid		(void) const;
+				bool OffsetSafe	(Int32_C4D offset);
 
 				static FXVectorCellIterator* Alloc();
 				static void Free(FXVectorCellIterator*& p);
