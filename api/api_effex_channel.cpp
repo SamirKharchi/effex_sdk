@@ -1,4 +1,4 @@
-// Copyright (c) All Rights Reserved, Navié
+// Copyright (c) All Rights Reserved, NaviÃ©
 //
 // This does not touch the license for the Cinema 4D specific code functions used
 // Please see the Cinema 4D license correspondingly. All other rights reserved.
@@ -164,6 +164,18 @@ double NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXFireChannel::GetAfterLife() const
 /************************************************************************/
 double default_zero = 0.0;
 
+NAVIE_GLOBAL::VecInt3D NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXScalarCellIterator::GetCoordinate( const int cpu )
+{
+	get_library_sub(EffexLibrary,fx_csiterator,GetCoordinate,VecInt3D(default_zero),fx_particle_lib);
+	return get_library_value_1(vlib->fx_csiterator,ScalarIterator,GetCoordinate,cpu);	
+}
+
+Int32_C4D NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXScalarCellIterator::GetLinearCoordinate( const int cpu )
+{
+	get_library_sub(EffexLibrary,fx_csiterator,GetLinearCoordinate,default_zero,fx_particle_lib);
+	return get_library_value_1(vlib->fx_csiterator,ScalarIterator,GetLinearCoordinate,cpu);	
+}
+
 double NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXScalarCellIterator::GetValue( const int cpu )
 {
 	get_library_sub(EffexLibrary,fx_csiterator,GetValue,default_zero,fx_particle_lib);
@@ -248,6 +260,17 @@ void NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXScalarCellIterator::SetValue( const
 
 /************************************************************************/
 /************************************************************************/
+NAVIE_GLOBAL::VecInt3D NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXVectorCellIterator::GetCoordinate( const int cpu )
+{
+	get_library_sub(EffexLibrary,fx_cviterator,GetCoordinate,VecInt3D(default_zero),fx_particle_lib);
+	return get_library_value_1(vlib->fx_cviterator,VectorIterator,GetCoordinate,cpu);	
+}
+
+Int32_C4D NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXVectorCellIterator::GetLinearCoordinate( const int cpu )
+{
+	get_library_sub(EffexLibrary,fx_cviterator,GetLinearCoordinate,default_zero,fx_particle_lib);
+	return get_library_value_1(vlib->fx_cviterator,VectorIterator,GetLinearCoordinate,cpu);	
+}
 NAVIE_GLOBAL::vector3d NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXVectorCellIterator::GetValue( const int cpu )
 {
 	get_library_sub(EffexLibrary,fx_cviterator,GetValue,vector3d(default_zero),fx_particle_lib);
