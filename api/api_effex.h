@@ -1,4 +1,4 @@
-// Copyright (c) All Rights Reserved, Navié
+// Copyright (c) All Rights Reserved, NaviÃ©
 //
 // This does not touch the license for the Cinema 4D specific code functions used
 // Please see the Cinema 4D license correspondingly. All other rights reserved.
@@ -112,8 +112,14 @@ namespace NAVIE_GLOBAL
 			/* Global Functions */
 			void HandleInexcludeBits	(InExcludeData* include, std::vector<Int32>& oldflags);
 			bool OpenCandidatePopup		(bool is_node_group, std::vector<FXBase*> &items, FXTypeInfos& types, BaseObject* caller, Int32_C4D linkfield_id, bool is_inexclude, bool create_menu, Int32_C4D inex_flags);
+			
 			void PhysicalToWorld		(FXScene* scene, vector3d& physical_position); /* Converts a physical position (e.g. particle position) into a Cinema 4D world position */
 			void WorldToPhysical		(FXScene* scene, vector3d& world_position);	/* Converts a Cinema 4D world position into a physical position*/
+			bool GridToWorld			(FXBase* channel, const NAVIE_GLOBAL::VecInt3D& grid_pos, vector3d& world_position, bool local);	/* Converts a grid position (e.g. channel) into a Cinema 4D world position */
+			bool GridToPhysical			(FXBase* channel, const NAVIE_GLOBAL::VecInt3D& grid_pos, vector3d& physical_position, bool local);		/* Converts a grid position (e.g. channel) into a physical position*/
+			bool WorldToGrid			(FXBase* channel, NAVIE_GLOBAL::vector3d world_pos, NAVIE_GLOBAL::VecInt3D& grid_pos, bool local);	/* Converts a C4D world position into a grid position (e.g. channel) */
+			bool PhysicalToGrid			(FXBase* channel, NAVIE_GLOBAL::vector3d physical_pos, NAVIE_GLOBAL::VecInt3D& grid_pos, bool local);		/* Converts a physical position into a grid position (e.g. channel)*/
+			
 			iNodeBaseWrapper* CreateWrapper(BaseObject* op);
 			void DeleteWrapper			(iNodeBaseWrapper*& ptr_wrapper);
 			void UpdateWrapper			(iNodeBaseWrapper* ptr_wrapper, BaseObject* op);
@@ -305,6 +311,8 @@ struct EffexMesherLib
 template < typename T, typename C >
 struct EffexCellIteratorLib
 {
+	NAVIE_GLOBAL::VecInt3D	(CellIterator<T, C >::*GetCoordinate)		(const int cpu);
+	Int32_C4D	(CellIterator<T, C >::*GetLinearCoordinate)		(const int cpu);
 	T			(CellIterator<T, C >::*GetValue)			(const int cpu);
 	void		(CellIterator<T, C >::*SetValue)			(const int cpu, const T& value);
 	T			(CellIterator<T, C >::*GetNeighborValue)	(const int cpu, short x, short y, short z) ;
@@ -369,6 +377,11 @@ struct EffexLibrary : public C4DLibrary
 	bool 	(*OpenCandidatePopup)	(bool is_node_group, std::vector<iBase*> &items, FXAPI::FXTypeInfos& types, BaseObject* caller, Int32_C4D linkfield_id, bool is_inexclude, bool create_menu, Int32_C4D inex_flags);
 	void	(*PhysicalToWorld)		(Scene* scene, NAVIE_GLOBAL::vector3d& physical_position);
 	void	(*WorldToPhysical)		(Scene* scene, NAVIE_GLOBAL::vector3d& world_position);	
+	bool	(*GridToWorld)			(iBase* channel, const NAVIE_GLOBAL::VecInt3D& grid_pos, NAVIE_GLOBAL::vector3d& world_position, bool local);	/* Converts a grid position (e.g. channel) into a Cinema 4D world position */
+	bool	(*GridToPhysical)		(iBase* channel, const NAVIE_GLOBAL::VecInt3D& grid_pos, NAVIE_GLOBAL::vector3d& physical_position, bool local);		/* Converts a grid position (e.g. channel) into a physical position*/
+	bool	(*WorldToGrid)			(iBase* channel, NAVIE_GLOBAL::vector3d world_pos, NAVIE_GLOBAL::VecInt3D& grid_pos, bool local);	/* Converts a C4D world position into a grid position (e.g. channel) */
+	bool	(*PhysicalToGrid)		(iBase* channel, NAVIE_GLOBAL::vector3d physical_pos, NAVIE_GLOBAL::VecInt3D& grid_pos, bool local);
+
 	iBase*	(*GetNode)				(Scene* scene, BaseObject* node, FXAPI::NodeRetrieveType type);
 	void	(*GetNodes)				(Scene* scene, InExcludeData* filter, std::vector<iBase*>& result, FXAPI::NodeRetrieveType type);
 	iNodeBaseWrapper* (*CreateWrapper) (BaseObject* op);
