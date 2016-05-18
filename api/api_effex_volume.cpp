@@ -1,4 +1,4 @@
-// Copyright (c) All Rights Reserved, Navié
+// Copyright (c) All Rights Reserved, NaviÃ©
 //
 // This does not touch the license for the Cinema 4D specific code functions used
 // Please see the Cinema 4D license correspondingly. All other rights reserved.
@@ -114,6 +114,18 @@ NAVIE_GLOBAL::vector3d NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXVolume::GetNormal
 
 /************************************************************************/
 /************************************************************************/
+NAVIE_GLOBAL::VecInt3D NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXVolumeCellIterator::GetCoordinate( const int cpu )
+{
+	get_library_sub(EffexLibrary,fx_cvoliterator,GetCoordinate,VecInt3D(0),fx_particle_lib);
+	return get_library_value_1(vlib->fx_cvoliterator,VolumeIterator,GetCoordinate,cpu);	
+}
+
+Int32_C4D NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXVolumeCellIterator::GetLinearCoordinate( const int cpu )
+{
+	get_library_sub(EffexLibrary,fx_cvoliterator,GetLinearCoordinate,0,fx_particle_lib);
+	return get_library_value_1(vlib->fx_cvoliterator,VolumeIterator,GetLinearCoordinate,cpu);	
+}
+
 double NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXVolumeCellIterator::GetValue( const int cpu )
 {
 	get_library_sub(EffexLibrary,fx_cvoliterator,GetValue,0.0,fx_particle_lib);
