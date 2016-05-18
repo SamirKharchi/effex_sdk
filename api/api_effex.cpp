@@ -1,4 +1,4 @@
-// Copyright (c) All Rights Reserved, Navié
+// Copyright (c) All Rights Reserved, NaviÃ©
 //
 // This does not touch the license for the Cinema 4D specific code functions used
 // Please see the Cinema 4D license correspondingly. All other rights reserved.
@@ -24,6 +24,30 @@ void NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::WorldToPhysical( FXScene* scene, vect
 {
 	get_library_set(EffexLibrary,WorldToPhysical,fx_particle_lib);
 	get_library_funcvalue_2(vlib,WorldToPhysical,reinterpret_cast<NAVIE_GLOBAL::NAVIE_EFFEX::Scene*>(scene),world_position); 
+}
+
+bool NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::GridToWorld(FXBase* channel, const NAVIE_GLOBAL::VecInt3D& grid_pos, vector3d& world_position, bool local)
+{
+	get_library(EffexLibrary,GridToWorld,false,fx_particle_lib);
+	return get_library_funcvalue_4(vlib,GridToWorld,reinterpret_cast<NAVIE_GLOBAL::NAVIE_EFFEX::iBase*>(channel),grid_pos,world_position,local); 
+}
+
+bool NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::GridToPhysical(FXBase* channel, const NAVIE_GLOBAL::VecInt3D& grid_pos, vector3d& physical_position, bool local)
+{
+	get_library(EffexLibrary,GridToPhysical,false,fx_particle_lib);
+	return get_library_funcvalue_4(vlib,GridToPhysical,reinterpret_cast<NAVIE_GLOBAL::NAVIE_EFFEX::iBase*>(channel),grid_pos,physical_position,local); 
+}
+
+bool NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::WorldToGrid(FXBase* channel, NAVIE_GLOBAL::vector3d world_pos, NAVIE_GLOBAL::VecInt3D& grid_pos, bool local)
+{
+	get_library(EffexLibrary,WorldToGrid,false,fx_particle_lib);
+	return get_library_funcvalue_4(vlib,WorldToGrid,reinterpret_cast<NAVIE_GLOBAL::NAVIE_EFFEX::iBase*>(channel),world_pos,grid_pos,local); 
+}
+
+bool NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::PhysicalToGrid(FXBase* channel, NAVIE_GLOBAL::vector3d physical_pos, NAVIE_GLOBAL::VecInt3D& grid_pos, bool local)
+{
+	get_library(EffexLibrary,PhysicalToGrid,false,fx_particle_lib);
+	return get_library_funcvalue_4(vlib,WorldToGrid,reinterpret_cast<NAVIE_GLOBAL::NAVIE_EFFEX::iBase*>(channel),physical_pos,grid_pos,local); 
 }
 
 void NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::HandleInexcludeBits(InExcludeData* include, std::vector<Int32>& oldflags)
