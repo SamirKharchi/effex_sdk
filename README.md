@@ -14,9 +14,9 @@ Furthermore it allows to extent Effex functionality with your own plugin nodes a
 Please see the examples in the 'source' folder.
 
 **Requirements**
-- Cinema 4D R16 (to link against its api)
+- at least Cinema 4D R16 (to link against its api)
 - Windows/OSX
-- Effex 2.70.60 (or higher)
+- Effex 2.70.77 (or higher)
 - Visual Studio 2013 and XCode 5.x (but any C++11 compliant compiler should work)
 
 **How to use**
