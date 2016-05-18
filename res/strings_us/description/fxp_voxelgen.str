@@ -1,0 +1,10 @@
+STRINGTABLE fxp_voxelgen
+{
+	fxp_voxelgen "VoxelGenerator";
+
+	VGEN_SCENE "Effex Scene";
+	VGEN_CHANNEL "Channel";
+	VGEN_CHANNEL_SELECTOR "C";
+	VGEN_SCALE "Scale";
+	VGEN_THRESHOLD "Value threshold";
+}

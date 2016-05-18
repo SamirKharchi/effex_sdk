@@ -1,0 +1,18 @@
+STRINGTABLE fxp_sampleeffector
+{
+	fxp_sampleeffector		"Sample Channel Effector";
+
+	SEFF_SCALE			"Scale";
+	SEFF_CHANNEL			"Scalar Channel";
+	SEFF_CHANNEL_SELECTOR		"C";
+	SEFF_WEIGHT_TARGET		"Apply to..";
+	SEFF_WEIGHT_TARGET_ALL		"All Effector strengths";
+	SEFF_WEIGHT_TARGET_POS		"Position";
+	SEFF_WEIGHT_TARGET_ROT		"Rotation";
+	SEFF_WEIGHT_TARGET_SCALE	"Scale";
+	SEFF_WEIGHT_TARGET_COLOROPACITY	"Color Opacity";
+	SEFF_WEIGHT_TARGET_VISIBILITY	"Visibility";
+	SEFF_WEIGHT_TARGET_WEIGHT	"Weight";
+	SEFF_WEIGHT_TARGET_INDEX	"Clone Index";
+	SEFF_WEIGHT_TARGET_TIME		"Time";
+}
