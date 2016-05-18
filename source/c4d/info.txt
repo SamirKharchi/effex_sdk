@@ -1,0 +1,2 @@
+This folder contains examples of Cinema 4D specific objects (non-effex objects)
+that access the Effex framework arbitrarily.
