@@ -1,4 +1,4 @@
-// Copyright (c) All Rights Reserved, Navié
+// Copyright (c) All Rights Reserved, NaviÃ©
 //
 // This does not touch the license for the Cinema 4D specific code functions used
 // Please see the Cinema 4D license correspondingly. All other rights reserved.
@@ -14,48 +14,54 @@ FXAPI::FXServer* FXAPI::FXServer::Get(BaseDocument* doc)
 {
 	return static_cast<FXServer*>(doc->FindSceneHook(EFFEX_SERVER));
 }
+
+#if (API_VERSION > 17000)
+#define apiGetNodeData GetNodeData<NodeData>
+#else
+#define apiGetNodeData GetNodeData
+#endif
 /************************************************************************/
 /* Server */
 const int FXAPI::FXServer::GetSceneCount() const
 {
 	get_library_sub(EffexLibrary,fx_server,GetSceneCount,0,fx_particle_lib);
-	return get_library_internalvalue_0(vlib->fx_server,const EffexHook,GetNodeData(),GetSceneCount);
+	return get_library_internalvalue_0(vlib->fx_server,const EffexHook,apiGetNodeData(),GetSceneCount);
 }
 
 FXAPI::FXScene* FXAPI::FXServer::GetEffexScene( BaseObject* node )
 {
 	get_library_sub(EffexLibrary,fx_server,GetEffexScene,0,fx_particle_lib);
-	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,GetNodeData(),FXAPI::FXScene,GetEffexScene,node);
+	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,apiGetNodeData(),FXAPI::FXScene,GetEffexScene,node);
 }
 
 FXAPI::FXScene* FXAPI::FXServer::GetEffexScene( iNodeBaseWrapper* node )
 {
 	get_library_sub(EffexLibrary,fx_server,nvGetEffexScene,0,fx_particle_lib);
-	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,GetNodeData(),FXAPI::FXScene,nvGetEffexScene,node);
+	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,apiGetNodeData(),FXAPI::FXScene,nvGetEffexScene,node);
 }
 
 const int FXAPI::FXServer::GetActiveSceneCount() const
 {
 	get_library_sub(EffexLibrary,fx_server,GetActiveSceneCount,0,fx_particle_lib);
-	return get_library_internalvalue_0(vlib->fx_server,const EffexHook,GetNodeData(),GetActiveSceneCount);
+	return get_library_internalvalue_0(vlib->fx_server,const EffexHook,apiGetNodeData(),GetActiveSceneCount);
 }
 
 FXAPI::FXParticleGroup* FXAPI::FXServer::GetParticleGroup( iNodeBaseWrapper* node )
 {
 	get_library_sub(EffexLibrary,fx_server,GetParticleGroup,0,fx_particle_lib);
-	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,GetNodeData(),FXAPI::FXParticleGroup,GetParticleGroup,node);
+	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,apiGetNodeData(),FXAPI::FXParticleGroup,GetParticleGroup,node);
 }
 
 const FXAPI::FXParticleGroup* FXAPI::FXServer::GetParticleGroup( iNodeBaseWrapper* node ) const
 {
 	get_library_sub(EffexLibrary,fx_server,GetParticleGroup,0,fx_particle_lib);
-	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,GetNodeData(),const FXAPI::FXParticleGroup,GetParticleGroupR,node);
+	return get_library_internalvalue_1_cast(vlib->fx_server,EffexHook,apiGetNodeData(),const FXAPI::FXParticleGroup,GetParticleGroupR,node);
 }
 
 void NAVIE_GLOBAL::NAVIE_EFFEX::NAVIE_API::FXServer::GetConstraints( iLinkList* filter, std::vector<FXConstraint*>& result )
 {
 	get_library_set_sub(EffexLibrary,fx_server,GetConstraints,fx_particle_lib);
-	get_library_internalvalue_2(vlib->fx_server,EffexHook,GetNodeData(),GetConstraints,filter,reinterpret_cast<std::vector<Constraint*>&>(result));
+	get_library_internalvalue_2(vlib->fx_server,EffexHook,apiGetNodeData(),GetConstraints,filter,reinterpret_cast<std::vector<Constraint*>&>(result));
 }
 
 /************************************************************************/
